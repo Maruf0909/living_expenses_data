@@ -1,3 +1,5 @@
+from pprint import pprint
+
 import json
 
 def get_data(file_path: str) -> dict:
@@ -10,10 +12,15 @@ def get_data(file_path: str) -> dict:
     Returns:
         dict: dictionary of data
     """
-    pass
+    f=open(file_path, 'r').read()
+    data=json.loads(f)
+
+    return data
+    
 
 
 # test
 file_path = "data.json"
 data = get_data(file_path)
-print(data)
+
+pprint(data)
